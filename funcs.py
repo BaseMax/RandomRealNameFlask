@@ -1,5 +1,4 @@
 import random
-import linecache
 
 male_first_names = open(
     "./male-first-names.txt", mode="r", encoding="utf-8"
@@ -8,6 +7,18 @@ female_first_names = open(
     "./female-first-names.txt", mode="r", encoding="utf-8"
 ).readlines()
 last_names = open("./last-names.txt", mode="r", encoding="utf-8").readlines()
+
+
+def random_from_male():
+    return male_first_names[random_number(len(male_first_names)) - 1][:-1]
+
+
+def random_from_female():
+    return female_first_names[random_number(len(female_first_names)) - 1][:-1]
+
+
+def random_from_last_names():
+    return last_names[random_number(len(last_names)) - 1][:-1]
 
 
 def random_number(last):
@@ -27,7 +38,7 @@ def create_user_male():
     user = {}
     rand = random_number(2)
     if rand == 1:
-        user["first_name"] = male_first_names[random_number(1219) - 1][:-1]
+        user["first_name"] = random_from_male()
     else:
         user["first_name"] = None
     rand = random_number(2)
@@ -35,7 +46,7 @@ def create_user_male():
         user["separator"] = separator()
     else:
         user["separator"] = None
-    user["last_name"] = last_names[random_number(88799) - 1][:-1]
+    user["last_name"] = random_from_last_names()
     user["date"] = random_date()
     return user
 
@@ -44,7 +55,7 @@ def create_user_female():
     user = {}
     rand = random_number(2)
     if rand == 1:
-        user["first_name"] = female_first_names[random_number(4275) - 1][:-1]
+        user["first_name"] = random_from_female()
     else:
         user["first_name"] = None
     rand = random_number(2)
@@ -52,7 +63,7 @@ def create_user_female():
         user["separator"] = separator()
     else:
         user["separator"] = None
-    user["last_name"] = last_names[random_number(88799) - 1][:-1]
+    user["last_name"] = random_from_last_names()
     user["date"] = random_date()
     return user
 
@@ -61,9 +72,9 @@ def create_user():
     user = {}
     rand = random_number(3)
     if rand == 1:
-        user["first_name"] = male_first_names[random_number(1219) - 1][:-1]
+        user["first_name"] = random_from_male()
     elif rand == 2:
-        user["first_name"] = female_first_names[random_number(4275) - 1][:-1]
+        user["first_name"] = random_from_female()
     else:
         user["first_name"] = None
     rand = random_number(2)
@@ -71,7 +82,7 @@ def create_user():
         user["separator"] = separator()
     else:
         user["separator"] = None
-    user["last_name"] = last_names[random_number(88799) - 1][:-1]
+    user["last_name"] = random_from_last_names()
     user["date"] = random_date()
     return user
 
