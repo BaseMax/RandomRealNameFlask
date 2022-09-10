@@ -1,6 +1,6 @@
 # Random Real Name
 
-A short description of the project. TODO....
+A short description of the project. TODO...
 
 ## Assignment
 
@@ -20,6 +20,25 @@ We are going to use **JSON standard format** and so our API / web service will b
 ### Technology
 
 Python, Flask
+
+## Usage
+
+In the first step you can use GET method and get in response this README page:
+
+- `GET /`
+- `127.0.0.1:5000/`
+
+If you want to create a new random name use this route:
+
+- `127.0.0.1:5000/get`
+
+And if you want more than one after this route determine the number of names:
+
+- `127.0.0.1:5000/get/<amount>`
+
+By default this route generate both male and female names but if you want to specify gender, after this route write gender(male OR female):
+
+- `127.0.0.1:5000/get/<amount>/<gender(male/female)>`
 
 ### The main part
 
@@ -96,22 +115,3 @@ Note, I have never applied for a job anywhere until now and this assignment proj
 - Max Base
 
 Anyone is welcome to contribute, change or develop this project. Thanks in advance, Any comments are appreciated.
-
-## Usage
-
-In the first step you can use GET method and get in response this README page:
-
-- `GET /`
-- `127.0.0.1:5000/`
-
-If you want to create a new random name use this route:
-
-- `127.0.0.1:5000/get`
-
-And if you want more than one after this route determine the number of names:
-
-- `127.0.0.1:5000/get/<amount>`
-
-By default this route generate both male and female names but if you want to specify gender, after this route write gender(male OR female):
-
-- `127.0.0.1:5000/get/<amount>/<gender(male/female)>`
