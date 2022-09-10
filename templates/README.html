@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+      h1 {
+        color: royalblue;
+      }
+      span {
+        background-color: yellow;
+      }
+    </style>
+    <title>README</title>
+  </head>
+  <body>
+    <h1># Random Real Name</h1>
+
+    <p>A short description of the project. TODO....</p>
+    <h1>## Assignment</h1>
+
+    <p>
+      In most projects, we need to generate random names, but we do not want to
+      use random characters. We need real names.
+    </p>
+    <p>
+      We have an email provider which provides your email address. By getting
+      this repository they will be able to generate many random email address
+      but meanfull names.
+    </p>
+
+    <p style="font-weight: bold">
+      **The challenge of this is to generate a meaningful but UNIQUE name!**
+    </p>
+    <p>
+      Suppose you are going to generate 10k email address, so you need to have a
+      lot of unique names. An email address is a mix of name, family, age, or
+      maybe a date. So by using different value we are going to generate unique
+      name.
+    </p>
+    <h1>### Communication way</h1>
+
+    <p>
+      We are going to use **JSON standard format** and so our API / web service
+      will be RESTful.
+    </p>
+    <h1>### Technology</h1>
+
+    <p>Python, Flask</p>
+    <h1>### The main part</h1>
+
+    <p>
+      When a request asks us to generate 1000 UNIQUE names. we need to make sure
+      we are going to generate UNIQUE names. <br />In the process, Maybe we
+      generate 2000 names and after filtering the final result was 1000 UNIQUE
+      names. So when we find a `limit` number of unique names. it ends and we
+      send the output to that request.
+    </p>
+    <h1>### Routes</h1>
+
+    <span>GET /</span>
+    <br />
+    <p>
+      A route that will show this document and everyone can study more about the
+      project as well as this README.markdown.
+    </p>
+    <span>GET /get</span>
+    <br />
+    <h3>**Parameters:**</h3>
+
+    <p>
+      - The default value of `limit` is 1 but you are able to change limit to
+      any number of emails you need. like 100. <br />- The default value of
+      `gender` is `"both"`, But if you want to get random names for Male or
+      Female you need to set it to `male` or `female`. <br />This route not
+      going to generate an email for you. this only generates random and UNIQUE
+      names.
+    </p>
+    <h3>**Output:**</h3>
+
+    <span> { "status": 1, "name": "alireza2000" } </span>
+    <p>Or maybe as following if you are asking for more than one name:</p>
+    <span
+      >{ "status": 1, "names": [ "alireza2004", "hamid.h3000", "max.base1" ]
+      }</span
+    >
+    <p>Or if something went wrong:</p>
+    <span
+      >{ "status": 0, "message": "Oops, sorry. Something does not go as we
+      expected." }</span
+    ><br /><br /><br />
+    <span style="font-weight: bold">**Note:**</span>
+    <p>
+      Obviously, the HTTP Code is expected to be 200 if the request is answered
+      successfully.<br />Otherwise, you can use the appropriate code according
+      to the error.
+    </p>
+    <h1>## What do you need to search for?</h1>
+    <p>
+      We need a long list of first names and last names. There are several
+      public databases about names. <br /><br />
+      It can be two different files too. One for first name and the second for
+      family name.
+    </p>
+    <h1>## Database or not?</h1>
+
+    <p>
+      As it is clear, maybe there is no reason to use database in this project.
+      But you can use the database you like. <br /><br /><br />
+      You can also use the file to store names and surnames. But keep in mind
+      that your web service must be able to respond to a large number of
+      simultaneous requests.
+    </p>
+    <h1>## Why Assignment?</h1>
+
+    <p>
+      Note, I have never applied for a job anywhere until now and this
+      assignment project is designed by myself. Right now I'm enjoying GitHub
+      and I'm not looking for solving assignments for others. Best Wishes.
+    </p>
+    <h1>## Authors</h1>
+
+    <h3>- Ahmadi</h3>
+    <h3>- Max Base</h3>
+
+    <p>
+      Anyone is welcome to contribute, change or develop this project. Thanks in
+      advance, Any comments are appreciated.
+    </p>
+    <h1>## Usage</h1>
+    <p>
+      in the first step you can use get method and GET in response this README
+      page:
+    </p>
+    <span>- `GET /`</span><br /><span>- `127.0.0.1:5000/`</span>
+    <p>if you want to create a new random name use this route:</p>
+    <span>- `127.0.0.1:5000/get`</span><br />
+    <p>
+      and if you want more than one after this route determine the number of
+      names:
+    </p>
+    <span>- `127.0.0.1:5000/get/&lt;amount&gt;`</span><br />
+    <p>
+      by default this route generate both male and female names but if you want
+      to specify gender, after this route write gender(male OR female):
+    </p>
+    <span
+      >- `127.0.0.1:5000/get/&lt;amount&gt;/&lt;gender(male/female)&gt;`</span
+    ><br />
+  </body>
+</html>

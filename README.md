@@ -4,7 +4,7 @@ A short description of the project. TODO....
 
 ## Assignment
 
-In most projects, we need to generate random names, but we do not want to use random characters. We need real names. 
+In most projects, we need to generate random names, but we do not want to use random characters. We need real names.
 
 We have an email provider which provides your email address. By getting this repository they will be able to generate many random email address but meanfull names.
 
@@ -47,8 +47,8 @@ This route not going to generate an email for you. this only generates random an
 
 ```json
 {
-   "status": 1,
-   "name": "alireza2000"
+  "status": 1,
+  "name": "alireza2000"
 }
 ```
 
@@ -56,12 +56,8 @@ Or maybe as following if you are asking for more than one name:
 
 ```json
 {
-   "status": 1,
-   "names": [
-    "alireza2004",
-    "hamid.h3000",
-    "max.base1"
-   ]
+  "status": 1,
+  "names": ["alireza2004", "hamid.h3000", "max.base1"]
 }
 ```
 
@@ -69,8 +65,8 @@ Or if something went wrong:
 
 ```json
 {
-   "status": 0,
-   "message": "Oops, sorry. Something does not go as we expected."
+  "status": 0,
+  "message": "Oops, sorry. Something does not go as we expected."
 }
 ```
 
@@ -100,3 +96,22 @@ Note, I have never applied for a job anywhere until now and this assignment proj
 - Max Base
 
 Anyone is welcome to contribute, change or develop this project. Thanks in advance, Any comments are appreciated.
+
+## Usage
+
+in the first step you can use get method and GET in response this README page:
+
+- `GET /`
+- `127.0.0.1:5000/`
+
+if you want to create a new random name use this route:
+
+- `127.0.0.1:5000/get`
+
+and if you want more than one after this route determine the number of names:
+
+- `127.0.0.1:5000/get/<amount>`
+
+by default this route generate both male and female names but if you want to specify gender, after this route write gender(male OR female):
+
+- `127.0.0.1:5000/get/<amount>/<gender(male/female)>`
