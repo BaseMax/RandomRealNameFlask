@@ -20,23 +20,21 @@ def get_one_user():
 
 @app.route("/get/<int:count>")
 def get_several_user(count):
-    users = create_several_user(count)
+    users = create_several_user(amount=count)
     return render_template("users.html", title=f"{count} user", users=users, status=1)
 
 
 @app.route("/get/<int:count>/<string:gender>")
 def get_user_specific_gender(count, gender):
-    if gender.lower() == "male":
-        users = create_several_user_male(count)
-    elif gender.lower() == "female":
-        users = create_several_user_female(count)
-    else:
+    if gender.lower() != "male" and gender.lower() != "female":
         return render_template(
             "error.html",
             title="ERROR",
             status=0,
             message="Oops, sorry. Something does not go as we expected.",
         )
+    else:
+        users = create_several_user(amount=count, gender=gender)
     return render_template("users.html", title=f"{count} user", users=users, status=1)
 
 
@@ -45,8 +43,7 @@ def error(e):
     return render_template(
         "error.html",
         title="ERROR",
-        status=0,
-        message="Oops, sorry. Something does not go as we expected.",
+        message="404-page not found",
     )
 
 

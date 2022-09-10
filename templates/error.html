@@ -12,7 +12,7 @@
     </style>
   </head>
   <body>
-    <span>status: </span>{{ status }}
-    <h3>{{ message }}</h3>
+    {% if status %} <span>status: </span>{{ status }} {% endif %}
+    <h2>{{ message }}</h2>
   </body>
 </html>
