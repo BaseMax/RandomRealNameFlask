@@ -99,19 +99,19 @@ Anyone is welcome to contribute, change or develop this project. Thanks in advan
 
 ## Usage
 
-in the first step you can use get method and GET in response this README page:
+In the first step you can use GET method and get in response this README page:
 
 - `GET /`
 - `127.0.0.1:5000/`
 
-if you want to create a new random name use this route:
+If you want to create a new random name use this route:
 
 - `127.0.0.1:5000/get`
 
-and if you want more than one after this route determine the number of names:
+And if you want more than one after this route determine the number of names:
 
 - `127.0.0.1:5000/get/<amount>`
 
-by default this route generate both male and female names but if you want to specify gender, after this route write gender(male OR female):
+By default this route generate both male and female names but if you want to specify gender, after this route write gender(male OR female):
 
 - `127.0.0.1:5000/get/<amount>/<gender(male/female)>`
