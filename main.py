@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from funcs import *
+from Enum import Gender
+
 
 app = Flask(__name__)
 
@@ -26,7 +28,7 @@ def get_several_user(count):
 
 @app.route("/get/<int:count>/<string:gender>")
 def get_user_specific_gender(count, gender):
-    if gender.lower() != "male" and gender.lower() != "female":
+    if gender.lower() != Gender.male.name and gender.lower() != Gender.female.name:
         return render_template(
             "error.html",
             title="ERROR",

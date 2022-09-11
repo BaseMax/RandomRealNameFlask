@@ -1,5 +1,6 @@
 import random
 from datetime import date
+from Enum import Gender
 
 male_first_names = open(
     "./male-first-names.txt", mode="r", encoding="utf-8"
@@ -34,22 +35,26 @@ def separator():
     return seps[random_number(2) - 1]
 
 
-def create_user(gender="both"):
+def create_user(gender=Gender.both.name):
     user = {}
-    if gender == "male":
+    if gender == Gender.male.name:
         rand = random_number(2)
-        user["first_name"] = random_from(1) if rand == 1 else None
-    elif gender == "female":
+        user["first_name"] = random_from(Gender.male.value) if rand == 1 else None
+    elif gender == Gender.female.name:
         rand = random_number(2)
-        user["first_name"] = random_from(2) if rand == 1 else None
+        user["first_name"] = random_from(Gender.female.value) if rand == 1 else None
     else:
         rand = random_number(3)
         user["first_name"] = (
-            random_from(1) if rand == 1 else random_from(2) if rand == 2 else None
+            random_from(Gender.male.value)
+            if rand == 1
+            else random_from(Gender.female.value)
+            if rand == 2
+            else None
         )
     rand = random_number(2)
     user["separator"] = separator() if rand == 1 else None
-    user["last_name"] = random_from(0)
+    user["last_name"] = random_from(Gender.both.value)
     user["date"] = random_date()
     return user
 
