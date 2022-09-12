@@ -1,6 +1,6 @@
 # Random Real Name
 
-A Python web-based application for generating random (gender-aware) and secure service to create unique random usernames lists.
+A Python web-based application for generating random user-names (gender-aware), An online and secure service to create unique random usernames lists.
 
 ## Assignment
 
