@@ -1,6 +1,6 @@
 # Random Real Name
 
-A short description of the project. TODO...
+A Python web-based application for generating random (gender-aware) and secure usernames to create unique random lists.
 
 ## Assignment
 
