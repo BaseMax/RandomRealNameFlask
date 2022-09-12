@@ -15,7 +15,7 @@ So by using different value we are going to generate unique name.
 
 ### Communication way
 
-We are going to use **JSON standard format** and so our API / web service will be RESTful.
+We are going to use **HTML**.
 
 ### Technology
 
