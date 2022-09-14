@@ -1,1 +1,6 @@
-LICENCE
+Dockerfile
+.dockerignore
+.git
+.cache
+venv/
+*.pyc
